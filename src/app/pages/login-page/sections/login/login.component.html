@@ -1,0 +1,67 @@
+<block-ui>
+  <div class="container pb-5 pt-5 custom-page max-width">
+    <div class="row justify-content-center pt-1 pb-2 object-fit-cover rounded">
+      <img alt="logo" class="img-logo img-fluid rounded w-100 " src="../../../../../assets/images/Procuima logo.jpeg" />
+    </div>
+    <div class="row py-5 justify-content-center">
+      <div class="col-8">
+        <div class="row justify-content-center">
+          <form class="w-100" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="form-group col-12">
+              <label for="rut" class="col-vert-align-left"
+                ><i class="icon dicon-01 label-icon"></i>
+                <span class="ml-1 bold"
+                  ><b>Correo</b></span
+                ></label
+              >
+              <input
+                formControlName="email"
+                type="text"
+                [placeholder]="'Escribir correo'"
+                class="form-control custom-input"
+              />
+            </div>
+            <div *ngIf="userForm.get('user')?.touched && userForm.get('user')?.errors?.['required']"
+            class="alert alert-danger">
+            Este campo es requerido
+        </div>
+        <div *ngIf="userForm.get('user')?.touched && userForm.get('user')?.errors?.['minlength']"
+            class="alert alert-danger">
+           El codigo de encuesta debe tener mas de 6 caracteres 
+        </div>
+            <div class="form-group col-12 pt-2">
+              <label for="pass" class="col-vert-align-left"
+                ><i class="icon dicon-03 label-icon"></i
+                ><span class="ml-1 bold"><b>Contraseña</b></span></label
+              >
+              <app-input-password
+                (onChange)="onPassSelect($event)"
+                [data]="userForm.value.pass"
+                [placerholder]="'Escribir Contraseña'"
+                [className]="'form-control custom-input'"
+              ></app-input-password>
+            </div>
+            <div class="text-center mb-3">
+              <i class="error-login"
+                ><small [innerHtml]="message_login" class="my-2"></small
+              ></i>
+            </div>
+            <div class="form-group col-12 text-center pt-4">
+              <button
+                class="
+                  btn btn-sm btn-primary
+                  px-5
+                  py-2
+                  custom-border-radius
+                  mb-3
+                "
+              >
+                <h5 class="px-4 my-0 font-weight-normal">Ingresar</h5></button
+              ><br />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</block-ui>

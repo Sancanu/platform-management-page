@@ -1,0 +1,13 @@
+<app-header ></app-header>
+<div class="container justify-content-center">
+  <div *ngIf="role == 'ADMIN'" class="row justify-content-center row-cols-1 pt-5 row-cols-md-2 g-4 " >
+    <div class="d-flex justify-content-center">
+      <button (click)="openProjectModal()" class="btn btn-success">
+        Crear nuevo proyecto
+      </button>
+    </div>
+  </div>
+  <div class="row justify-content-center row-cols-1 pt-5 row-cols-md-2 g-4" *ngFor="let project of projects">
+    <app-project-card (goToProductDetail)="goToProjectDetail($event)"  [project]="project" ></app-project-card>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+@import "../../../../../styles.scss";
+.img-logo {
+  max-width: 12rem;
+}
+
+.label-login {
+    color: $fuerza-gray-a4;
+    .label-icon {
+        &::before {
+            font-size: 1.5rem;
+            color: $fuerza-gray;
+        }
+    }
+}
+
+.max-width {
+    max-width:400px
+  }
+.recovery-login {
+    color: $fuerza-gray-a4;
+    text-decoration: underline;
+    &:focus {
+        outline-offset: 0px !important;
+    }
+    &:hover {
+        color: $fuerza-gray-ac;
+        text-decoration: underline;
+    }
+}
+
+.login-register {
+    color: $fuerza-gray-a4;
+    a {
+        color: $fuerza-gray-a4;
+        &:focus {
+            outline-offset: 0px !important;
+        }
+        &:hover {
+            color: $fuerza-gray-ac;
+            text-decoration: underline;
+        }
+    }
+}
+
+.error-login {
+    color: red;
+}

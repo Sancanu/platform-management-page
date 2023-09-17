@@ -1,0 +1,9 @@
+@import "../../../styles.scss";
+
+.custom-color-nav-bar {
+    color: red;
+    .custom-redirect-nav-bar {
+        cursor: pointer;
+        color: red;
+    }
+}

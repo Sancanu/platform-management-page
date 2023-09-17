@@ -1,0 +1,15 @@
+.header-container {
+  margin-top: 20px;
+  & .nav-item {
+    display: flex;
+    align-items: center;
+  }
+}
+.img-logo {
+  width: 60%;
+  max-height: 100px;
+}
+.center-vertical {
+  display: flex;
+  align-items: center;
+}

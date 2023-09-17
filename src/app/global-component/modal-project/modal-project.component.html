@@ -1,0 +1,71 @@
+<div class="">
+    <div class="container">
+        <div class="d-flex justify-content-end  pt-2">
+            <i class="" (click)="modal.dismissAll('Cerrar')">
+                Cerrar
+            </i>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center pt-4 modal-body my-1">
+            <form class="form-signin" [formGroup]="miFormProject" (ngSubmit)="onSubmit()">
+                <label for="">Titulo de proyecto</label>
+                <input type="text" class="form-control bordear" placeholder="Titulo" formControlName="title">
+                <div *ngIf="miFormProject.get('title')?.touched && miFormProject.get('title')?.errors?.['required']"
+                    class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+                <label for="">Descripción del proyecto</label>
+                <input type="text" class="form-control bordear" placeholder="Descripción" formControlName="description">
+                <div *ngIf="miFormProject.get('description')?.touched && miFormProject.get('description')?.errors?.['required']"
+                    class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+                <label for="">Fecha de inicio</label>
+                <input type="text" class="form-control bordear" placeholder="Inicio" formControlName="startDate">
+                <div *ngIf="miFormProject.get('startDate')?.touched && miFormProject.get('startDate')?.errors?.['required']"
+                    class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+                <label for="">Fecha de finalización</label>
+                <input type="text" class="form-control bordear" placeholder="Fin" formControlName="finishDate">
+                <div *ngIf="miFormProject.get('finishDate')?.touched && miFormProject.get('finishDate')?.errors?.['required']"
+                    class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+                <label for="">Presupuesto</label>
+                <input type="text" class="form-control bordear" placeholder="Presupuesto" formControlName="ammount">
+                <div *ngIf="miFormProject.get('ammount')?.touched && miFormProject.get('ammount')?.errors?.['required']"
+                    class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+                <label for="">Tipo de projecto</label>
+                <input type="text" class="form-control bordear" placeholder="Tipo de projecto" formControlName="typeProject">
+                <div *ngIf="miFormProject.get('typeProject')?.touched && miFormProject.get('typeProject')?.errors?.['required']"
+                    class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+                <label for="">Costos totales</label>
+                <input type="text" class="form-control bordear" placeholder="Codigo de usuario" formControlName="totalCost">
+                <div *ngIf="miFormProject.get('totalCost')?.touched && miFormProject.get('totalCost')?.errors?.['required']"
+                    class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+                <label for="">Total de los gastos</label>
+                <input type="text" class="form-control bordear" placeholder="Total de gastos" formControlName="expenseAmount">
+                <div *ngIf="miFormProject.get('expenseAmount')?.touched && miFormProject.get('expenseAmount')?.errors?.['required']"
+                    class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+                <label for="">Nombre del director del proyecto</label>
+                <input type="text" class="form-control bordear" placeholder="Nombre del director o ejecutor" formControlName="directorName">
+                <div *ngIf="miFormProject.get('directorName')?.touched && miFormProject.get('directorName')?.errors?.['required']"
+                    class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+                <button type="submit" class=" form-control btn btn-outline-danger btn-lg col-12"
+                    [disabled]="miFormProject.invalid">Enviar</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>

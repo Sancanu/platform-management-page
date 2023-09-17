@@ -1,0 +1,8 @@
+<div class="row justify-content-center">
+    <div class="col-11 px-0">
+        <span *ngFor="let url_section of UrlSections; let i = index" class="custom-color-nav-bar">
+            <span (click)="goToSectionNavBar(url_section.redirect_to)" class="custom-redirect-nav-bar">{{url_section.label}}</span>
+            <span *ngIf="i < (UrlSections.length - 1)"> > </span>
+        </span>
+    </div>
+</div>

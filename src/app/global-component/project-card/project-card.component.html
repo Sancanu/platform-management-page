@@ -1,0 +1,39 @@
+<div class="card  justify-content-center  mb-3 mx-3" (click)="goToDetail(project.projectId)">
+  <div class="card-body  text-center">
+    <h1 class="card-title">{{project.title}}</h1>
+    <p class="card-text">
+      {{project.description}}
+    </p>
+    <p class=" card-text">
+      {{project.typeProject}}
+    </p>
+    <p class="card-text">
+      {{project.amount}}
+    </p>
+    <p class="card-text">
+      {{project.totalCost}}
+    </p>
+    <p class="card-text">
+      {{project.expenseAmount}}
+    </p>
+    <p class="card-text">
+      {{project.directorName}}
+    </p>
+    <p  *ngIf="isDetail" class="card-text">
+      {{project.startDate}}
+    </p>
+    <p *ngIf="isDetail" class="card-text">
+      {{project.finishDate}}
+    </p>
+
+    <div *ngIf="isDetail" class="col-12 d-flex justify-content-center">
+      <button (click)="edit()" class="btn btn-warning mx-2">
+        editar
+      </button>
+      <button (click)="delete()" class="btn btn-danger mx-2">
+        eliminar
+      </button>
+    </div>
+  </div>
+
+</div>

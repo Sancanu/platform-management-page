@@ -1,0 +1,466 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: "Roboto", sans-serif !important;
+}
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./mixins.scss";
+//Colors
+$background-color: #f5f6f9;
+$fuerza-red: var(--fuerza-primary);
+$fuerza-text-btn: var(--fuerza-text-btn);
+$fuerza-red-light: var(--fuerza-primary-light-50);
+$fuerza-gray: #b3b3b3;
+$fuerza-gray-ac: #acacac;
+$fuerza-gray-d6: #d5d6d6;
+$fuerza-gray-a4: #a4a4a4;
+$fuerza-gray-b3: #b3b3b3;
+$fuerza-gray-ec: #ececec;
+$fuerza-gray-66: #616566;
+$fuerza-gray-cd: #cdcdcd;
+$fuerza-cyan: #59b4b6;
+$fuerza-red-const: #fa3d65;
+.col-vert-align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-vert-align-left {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.col-vert-align-right {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.custom-page {
+    min-height: 100vh;
+    padding-bottom: 5rem;
+}
+
+.custom-pointer {
+    cursor: pointer;
+}
+
+.custom-no-focus {
+    outline: transparent !important;
+}
+
+.gray-text {
+    color: $fuerza-gray !important;
+}
+
+.gray-text-a4 {
+    color: $fuerza-gray-a4;
+}
+
+.red-text {
+    color: $fuerza-red;
+}
+.white-text {
+    color: white;
+    &:before {
+        color: white !important;
+    }
+}
+
+.custom-border-radius {
+    border-radius: 0.75rem !important;
+}
+
+.custom-border-radius-medium {
+    border-radius: 1rem !important;
+}
+
+.custom-border-radius-hard {
+    border-radius: 1.5rem !important;
+}
+
+.custom-border-radius-medium-top {
+    border-top-right-radius: 1rem !important;
+    border-top-left-radius: 1rem !important;
+}
+
+.custom-shadow {
+    -webkit-box-shadow: 1px 2px 10px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 2px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    &:before {
+        font-size: 3rem;
+    }
+}
+
+.carousel-inner {
+    border-radius: 1rem;
+}
+
+.btn-outline-dgray-a4-primary {
+    &:hover {
+        color: white !important;
+    }
+}
+
+.medium {
+    font-weight: 400 !important;
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
+.custom-input {
+    background-color: transparent;
+    border: 1px solid $fuerza-gray-ac;
+    border-radius: 0.5rem;
+    height: 3rem;
+    color: $fuerza-gray-a4;
+    &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $fuerza-gray-d6;
+        opacity: 1; /* Firefox */
+    }
+    &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $fuerza-gray-d6;
+    }
+
+    &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $fuerza-gray-d6;
+    }
+    &:focus {
+        outline: none !important;
+        border-color: $fuerza-gray-ac !important;
+        outline: 0;
+        box-shadow: none !important;
+    }
+}
+
+//NG-DEEP
+::ng-deep .modal-content {
+    border-radius: 0.75rem;
+}
+
+::ng-deep .progress {
+    animation: unset !important;
+    -webkit-animation: unset !important;
+}
+
+.card {
+    border: none !important;
+    border-radius: 15px;
+}
+.btn:focus,
+.btn.focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+//Dinamic color Buttons
+.btn-outline-dgray-a4-primary,
+.btn-fuerza-red-primary,
+.btn-light,
+.btn-dgray-a4-primary,
+.btn-dgray-primary {
+    @include breakpoint(mobileonly) {
+        font-size: 0.9rem;
+    }
+    @include breakpoint(phablet) {
+        font-size: 0.9rem;
+    }
+    @include breakpoint(tablet) {
+        font-size: 1.25rem;
+    }
+    @include breakpoint(laptop) {
+        font-size: 1.25rem;
+    }
+}
+.btn-fuerza-red-primary {
+    color: $fuerza-text-btn;
+    background-color: var(--fuerza-primary);
+    border-color: var(--fuerza-primary);
+    &:disabled {
+        color: $fuerza-text-btn;
+        background-color: var(--fuerza-primary);
+        border-color: var(--fuerza-primary);
+    }
+    &:not(:disabled):not(.disabled):active,
+    .btn-fuerza-red-primary:not(:disabled):not(.disabled).active,
+    .show > .btn-fuerza-red-primary.dropdown-toggle {
+        color: $fuerza-text-btn;
+        background-color: var(--fuerza-primary);
+        border-color: var(--fuerza-primary);
+    }
+    &:focus,
+    .btn-fuerza-red-primary.focus {
+        color: $fuerza-text-btn;
+        background-color: var(--fuerza-primary);
+        border-color: var(--fuerza-primary);
+        box-shadow: 0 0 0 0.2rem var(--fuerza-primary-light-50);
+    }
+    &:hover {
+        color: $fuerza-text-btn;
+        background-color: var(--fuerza-primary-light-90);
+        border-color: var(--fuerza-primary);
+    }
+    &:not(:disabled):not(.disabled):active:focus,
+    .btn-fuerza-red-primary:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-fuerza-red-primary.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem var(--fuerza-primary-light-50);
+    }
+    i {
+        &::before {
+            color: $fuerza-text-btn;
+        }
+    }
+}
+.btn-outline-fuerza-red-primary {
+    color: var(--fuerza-primary);
+    &:disabled {
+        color: $fuerza-text-btn;
+        background-color: var(--fuerza-primary);
+        border-color: var(--fuerza-primary);
+    }
+    &:not(:disabled):not(.disabled):active,
+    .btn-fuerza-red-primary:not(:disabled):not(.disabled).active,
+    .show > .btn-fuerza-red-primary.dropdown-toggle {
+        color: $fuerza-text-btn;
+        background-color: var(--fuerza-primary);
+        border-color: var(--fuerza-primary);
+    }
+    &:focus,
+    .btn-fuerza-red-primary.focus {
+        color: $fuerza-text-btn;
+        background-color: var(--fuerza-primary);
+        border-color: var(--fuerza-primary);
+        box-shadow: 0 0 0 0.2rem var(--fuerza-primary-light-50);
+    }
+    &:hover {
+        color: $fuerza-text-btn;
+        background-color: var(--fuerza-primary-light-90);
+        border-color: var(--fuerza-primary);
+    }
+    &:not(:disabled):not(.disabled):active:focus,
+    .btn-fuerza-red-primary:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-fuerza-red-primary.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem var(--fuerza-primary-light-50);
+    }
+    i {
+        &::before {
+            color: $fuerza-text-btn;
+        }
+    }
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > .btn-outline-fuerza-red-primary.dropdown-toggle {
+        color: $fuerza-text-btn;
+        background-color: var(--fuerza-primary);
+        border-color: var(--fuerza-primary);
+    }
+}
+.ngb-dp-day .bg-primary {
+    background-color: $fuerza-gray !important;
+}
+.ngb-dp-arrow .btn-link {
+    color: $fuerza-gray !important;
+}
+.ngb-dp-weekday.small {
+    color: $fuerza-gray !important;
+}
+.month-unit.is-selected,
+.year-unit.is-selected,
+.day-background-upper.is-selected,
+.day-background-upper:hover,
+.month-unit:hover,
+.year-unit:hover {
+    background: var(--fuerza-primary) !important;
+}
+.container-editar-img-body-cropper {
+    width: auto !important;
+}
+.icon-password {
+    position: absolute;
+    right: 22px;
+    &::before {
+        font-size: 10px;
+    }
+}
+.title {
+    white-space: normal;
+    line-height: 1.2;
+    @include breakpoint(mobileonly) {
+        font-size: 1.2rem;
+    }
+    @include breakpoint(phablet) {
+        font-size: 1.2rem;
+    }
+    @include breakpoint(tablet) {
+        font-size: 1.4rem;
+    }
+    @include breakpoint(laptop) {
+        font-size: 1.4rem;
+    }
+    ::before {
+        @include breakpoint(mobileonly) {
+            font-size: 1rem;
+        }
+        @include breakpoint(phablet) {
+            font-size: 1rem;
+        }
+        @include breakpoint(tablet) {
+            font-size: 1.4rem;
+        }
+        @include breakpoint(laptop) {
+            font-size: 1.4rem;
+        }
+    }
+}
+.subtitle {
+    white-space: normal;
+    line-height: 1.2;
+    @include breakpoint(mobileonly) {
+        font-size: 0.9rem;
+    }
+    @include breakpoint(phablet) {
+        font-size: 0.9rem;
+    }
+    @include breakpoint(tablet) {
+        font-size: 1.1rem;
+    }
+    @include breakpoint(laptop) {
+        font-size: 1.1rem;
+    }
+    ::before {
+        @include breakpoint(mobileonly) {
+            font-size: 0.9rem;
+        }
+        @include breakpoint(phablet) {
+            font-size: 0.9rem;
+        }
+        @include breakpoint(tablet) {
+            font-size: 1.1rem;
+        }
+        @include breakpoint(laptop) {
+            font-size: 1.1rem;
+        }
+    }
+}
+.text-paragraph {
+    white-space: normal;
+    line-height: 1.2;
+    @include breakpoint(mobileonly) {
+        font-size: 0.8rem;
+    }
+    @include breakpoint(phablet) {
+        font-size: 0.8rem;
+    }
+    @include breakpoint(tablet) {
+        font-size: 0.9rem;
+    }
+    @include breakpoint(laptop) {
+        font-size: 0.9rem;
+    }
+    &::before {
+        @include breakpoint(mobileonly) {
+            font-size: 0.8rem;
+        }
+        @include breakpoint(phablet) {
+            font-size: 0.8rem;
+        }
+        @include breakpoint(tablet) {
+            font-size: 0.9rem;
+        }
+        @include breakpoint(laptop) {
+            font-size: 0.9rem;
+        }
+    }
+}
+.text-small {
+    white-space: normal;
+    line-height: 1.2;
+    @include breakpoint(mobileonly) {
+        font-size: 0.75rem;
+    }
+    @include breakpoint(phablet) {
+        font-size: 0.75rem;
+    }
+    @include breakpoint(tablet) {
+        font-size: 0.8rem;
+    }
+    @include breakpoint(laptop) {
+        font-size: 0.8rem;
+    }
+    &::before {
+        @include breakpoint(mobileonly) {
+            font-size: 0.75rem;
+        }
+        @include breakpoint(phablet) {
+            font-size: 0.75rem;
+        }
+        @include breakpoint(tablet) {
+            font-size: 0.8rem;
+        }
+        @include breakpoint(laptop) {
+            font-size: 0.8rem;
+        }
+    }
+}
+.btn-dgray-a4-primary {
+    color: white;
+    &:disabled {
+        color: white;
+    }
+    &:not(:disabled):not(.disabled):active,
+    .btn-fuerza-red-primary:not(:disabled):not(.disabled).active,
+    .show > .btn-fuerza-red-primary.dropdown-toggle {
+        color: white;
+    }
+    &:focus,
+    .btn-fuerza-red-primary.focus {
+        color: white;
+    }
+    &:hover {
+        color: white;
+    }
+}
+.btn-light {
+    color: $fuerza-gray-a4;
+    background-color: white;
+    border-color: white;
+}
+.btn-light {
+    &:hover {
+        color: $fuerza-red !important;
+    }
+    &:active {
+        color: $fuerza-red !important;
+    }
+    &:focus {
+        color: $fuerza-red !important;
+    }
+    &:disabled {
+        color: $fuerza-gray-a4 !important;
+    }
+}
+
+.primary-color-text {
+    color: $fuerza-red !important;
+}
+
+.object-fit-cover {
+    object-fit: cover
+}
+
+body {
+    background-color: #80808054;
+  }
+/* Importing Bootstrap SCSS file. */
+//@import 'bootstrap/scss/bootstrap';

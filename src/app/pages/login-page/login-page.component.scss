@@ -1,0 +1,130 @@
+@import "../../../styles.scss";
+
+.custom-title {
+  color: gray-a4;
+  font-weight: bold;
+  &.title-alert {
+    color: red;
+  }
+}
+
+
+.custom-msg {
+  color: gray-a4;
+}
+
+.label-login {
+    color: gray-a4;
+    .label-icon {
+        &::before {
+            font-size: 1.5rem;
+            color: gray;
+        }
+    }
+}
+
+.container-password {
+  padding: 0;
+  &-body {
+    background-color: white;
+    margin-top: 15px;
+    border-radius: 10px;
+    @include breakpoint(mobileonly) {
+			padding: 25px 10px 45px;
+		}
+		@include breakpoint(phablet) {
+			padding: 25px 10px 45px;
+		}
+		@include breakpoint(tablet) {
+			padding: 25px 50px 45px;
+		}
+		@include breakpoint(laptop) {
+			padding: 25px 50px 45px;
+		}
+    & .body-first {
+      margin-top: 50px;
+    }
+    &-label {
+      .label-icon {
+        &::before {
+            font-size: 1.5rem;
+        }
+      }
+      span {
+        margin-left: 5px;
+        color: #B3B3B3;
+      }
+    }
+  }
+  &-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    & button {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1.2em;
+      width: 95%;
+      .label-icon {
+        &::before {
+            font-size: 1.5rem;
+        }
+      }
+      span {
+        margin-left: 10px;
+      }
+    }
+    &-code {
+      color: red;
+      font-size: 1.2em;
+      cursor:pointer;
+      .label-icon {
+        &::before {
+            color: red;
+            font-size: 1.5rem;
+        }
+      }
+      span {
+        margin-left: 10px;
+      }
+    }
+    &-msg {
+      color: gray;
+      margin-top: 20px;
+      width: 95%;
+      font-size: 0.8em;
+
+    }
+  }
+  &-footer-row{
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    justify-content: space-between;
+    & .btn-register {
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1.2em;
+      width: calc((100% / 2) - 10px);
+      color: $fuerza-text-btn;
+      .label-icon {
+        &::before {
+            font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+.error-login {
+    color: red;
+}
+
