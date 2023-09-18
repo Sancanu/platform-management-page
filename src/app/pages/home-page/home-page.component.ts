@@ -50,7 +50,6 @@ export class HomePageComponent implements OnInit {
 
   getRole(){
     const payload = this.authService.getJwtPayload()
-    console.log("payload",payload.role)
     this.role = payload.role
   }
 

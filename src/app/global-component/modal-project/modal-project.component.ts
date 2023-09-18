@@ -34,7 +34,7 @@ export class ModalProjectComponent implements OnInit {
       description: [this.dataProject?.description ?? '', [Validators.required]],
       startDate: [this.dataProject?.startDate ?? '', [Validators.required]],
       finishDate: [this.dataProject?.finishDate ?? '', [Validators.required]],
-      ammount: [this.dataProject?.amount ?? 0, [Validators.required]],
+      amount: [this.dataProject?.amount ?? 0, [Validators.required]],
       typeProject: [this.dataProject?.typeProject ?? '', [Validators.required]],
       totalCost: [this.dataProject?.totalCost ?? 0, [Validators.required]],
       expenseAmount: [this.dataProject?.expenseAmount ?? 0, [Validators.required]],

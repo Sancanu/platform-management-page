@@ -18,8 +18,6 @@ export class ProjectCardComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log("project",this.project)
-
   }
   goToDetail(id:number){
     this.goToProductDetail.emit(id); // Emitir el evento con el _id de la campaña
@@ -29,7 +27,6 @@ export class ProjectCardComponent implements OnInit {
     this.deleteProject.emit();
   }
   edit(){
-    console.log("abir modal ")
     this.editProject.emit();
   }
 
